@@ -8,6 +8,7 @@ import pluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginReactRefresh from 'eslint-plugin-react-refresh';
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
 import pluginPrettier from 'eslint-plugin-prettier';
+import pluginImport from 'eslint-plugin-import';
 
 export default defineConfig([
   globalIgnores(['dist']),
@@ -19,6 +20,7 @@ export default defineConfig([
       'react-refresh': pluginReactRefresh,
       'jsx-a11y': pluginJsxA11y,
       prettier: pluginPrettier,
+      import: pluginImport,
     },
     extends: [js.configs.recommended, tseslint.configs.recommended],
     languageOptions: {
@@ -31,6 +33,7 @@ export default defineConfig([
       'react/prop-types': 'off',
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
+      'import/extensions': 'error',
     },
     settings: {
       react: { version: 'detect' },
